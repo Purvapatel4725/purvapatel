@@ -227,3 +227,26 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Select the form and success message elements
+  const form = document.querySelector('.php-email-form');
+  const successMessage = document.getElementById('success-message');
+
+  // Hide the success message initially
+  successMessage.style.display = 'none';
+
+  // Handle form submission
+  form.addEventListener('submit', function(event) {
+      // Prevent the default form submission behavior
+      event.preventDefault();
+
+      // Show the success message
+      successMessage.style.display = 'block';
+
+      // Optionally, you can add logic here to actually submit the form using AJAX
+      // or handle any other required behavior.
+      // For example:
+      // form.submit(); // Uncomment this line if you want to submit the form normally
+  });
+});
