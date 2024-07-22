@@ -369,13 +369,10 @@ h6 {
 
 .footer .copyright p {
   margin-bottom: 0;
+  font-size: 30px;
 }
 
-.footer .credits {
-  margin-top: 4px;
-  font-size: 13px;
-  text-align: center;
-}
+
 
 /*--------------------------------------------------------------
 # Preloader
