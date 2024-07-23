@@ -147,6 +147,7 @@ h6 {
   overflow-y: auto;
   z-index: 997;
   border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-right: 2px solid green; 
 }
 
 .header .profile-img img {
@@ -154,7 +155,7 @@ h6 {
   display: block;
   width: 120px;
   border: 0px solid color-mix(in srgb, var(--default-color), transparent 85%);
-  border: 5px solid green;
+  border: 4px solid green;
 }
 
 .header .logo {
@@ -192,7 +193,7 @@ h6 {
   width: 40px;
   height: 40px;
   transition: 0.3s;
-  border: 2px solid green;
+  border: 2px solid green; /*adds boarder on the right side of the nav bar*/
 }
 
 .header .social-links a:hover {
@@ -250,7 +251,7 @@ h6 {
 
 .navmenu {
   padding: 0;
-  z-index: 9997;
+  z-index: 9997; 
 }
 
 .navmenu ul {
@@ -543,6 +544,7 @@ section,
   align-items: center;
   justify-content: center;
   font-family: var(--heading-font); 
+  border-bottom: 2px solid green; /*adds border at the end of the hero*/
 }
 
 .hero img {
@@ -614,6 +616,14 @@ section,
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
+#about .img-fluid {
+  border: 5px solid green; 
+  border-radius: 50%;
+  display: block;
+  max-width: 100%;
+  height: auto; 
+}
+
 .about .content h2 {
   font-weight: 700;
   font-size: 24px;
