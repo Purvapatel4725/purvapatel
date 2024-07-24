@@ -8,5 +8,5 @@
 </p>
 
 <p align="center">
-<img src="assets/img/logo.png" alt="alt text">
+<img src="assets/img/logo.png" alt="alt text" width="50%">
 </p>
