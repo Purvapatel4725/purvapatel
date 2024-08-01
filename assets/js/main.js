@@ -250,3 +250,30 @@ document.addEventListener('DOMContentLoaded', function() {
       // form.submit(); // Uncomment this line if you want to submit the form normally
   });
 });
+
+function toggleMode() {
+  const body = document.body;
+  if (body.classList.contains('blue-mode')) {
+    body.classList.remove('blue-mode');
+    document.querySelector('.switch').textContent = 'Switch to Blue Mode';
+  } else {
+    body.classList.add('blue-mode');
+    document.querySelector('.switch').textContent = 'Switch to Green Mode';
+  }
+}
+function toggleMode() {
+  const isChecked = document.querySelector('.switch input').checked;
+
+  if (isChecked) {
+    document.documentElement.style.setProperty('--accent-color', 'blue');
+    document.documentElement.style.setProperty('--default-color', 'blue');
+    document.documentElement.style.setProperty('--nav-color', 'blue');
+    document.documentElement.style.setProperty('--nav-hover-color', 'blue');
+  } else {
+    document.documentElement.style.setProperty('--accent-color', 'green');
+    document.documentElement.style.setProperty('--default-color', 'green');
+    document.documentElement.style.setProperty('--nav-color', 'green');
+    document.documentElement.style.setProperty('--nav-hover-color', 'green');
+  }
+}
+

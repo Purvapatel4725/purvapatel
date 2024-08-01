@@ -46,6 +46,87 @@
 }
 
 /*--------------------------------------------------------------
+# Blue mode
+--------------------------------------------------------------*/
+/* Blue mode overrides */
+.blue-mode {
+  --default-color: #0000ff; /* Blue color for text */
+  --accent-color: #0000ff; /* Blue color for buttons, links, etc. */
+  --nav-color: #0000ff; /* Blue color for nav links */
+  --nav-hover-color: #ffffff; /* Optional: change hover color as needed */
+  --nav-dropdown-color: #a8a9b4; /* Blue color for dropdown nav links */
+  --nav-dropdown-hover-color: #ffffff; /* Optional: change hover color as needed */
+}
+
+/* Add styles for the switch button */
+.switch-container {
+  position: absolute;
+  bottom: 10px; /* Distance from the bottom of the header */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center the container by adjusting its position back by 50% of its own width */
+  text-align: center;
+  padding: 30px;
+}
+
+.switch-description {
+  color: var(--accent-color);
+
+  margin-bottom: 10px; /* Added space between description and switch */
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px; /* Width of the switch */
+  height: 34px; /* Height of the switch */
+}
+
+.switch input {
+  opacity: 0; /* Hide the default checkbox */
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--accent-color); /* Default color (green) */
+  transition: .4s;
+  border-radius: 34px; /* Rounded corners */
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: blue; /* Color when switched on (blue mode) */
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px); /* Move the slider to the right */
+}
+
+.slider:active:before {
+  width: 28px;
+}
+
+
+/*Ends*/
+
+/*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
 body {
@@ -147,7 +228,7 @@ h6 {
   overflow-y: auto;
   z-index: 997;
   border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-  border-right: 2px solid green; 
+  border-right: 2px solid var(--accent-color); 
 }
 
 .header .profile-img img {
@@ -155,7 +236,7 @@ h6 {
   display: block;
   width: 120px;
   border: 0px solid color-mix(in srgb, var(--default-color), transparent 85%);
-  border: 4px solid green;
+  border: 4px solid var(--accent-color);
 }
 
 /*Hover image and logo*/
@@ -169,7 +250,7 @@ h6 {
   display: block;
   width: 120px;
   border: 0px solid color-mix(in srgb, var(--default-color), transparent 85%);
-  border: 4px solid green;
+  border: 4px solid var(--accent-color);
   /*transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;*/
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, filter 0.5s ease-in-out;
 }
@@ -240,7 +321,7 @@ h6 {
   width: 40px;
   height: 40px;
   transition: 0.3s;
-  border: 2px solid green; /*adds boarder on the right side of the nav bar*/
+  border: 2px solid var(--accent-color); /*adds boarder on the right side of the nav bar*/
 }
 
 .header .social-links a:hover {
@@ -591,7 +672,7 @@ section,
   align-items: center;
   justify-content: center;
   font-family: var(--heading-font); 
-  border-bottom: 2px solid green; /*adds border at the end of the hero*/
+  border-bottom: 2px solid var(--accent-color); /*adds border at the end of the hero*/
 }
 
 .hero img {
@@ -666,7 +747,7 @@ section,
 # About Section
 --------------------------------------------------------------*/
 #about .img-fluid {
-  border: 5px solid green; 
+  border: 5px solid var(--accent-color); 
   border-radius: 50%;
   display: block;
   max-width: 100%;
@@ -805,7 +886,7 @@ section,
   background-color: var(--background-color);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   padding: 30px;
-  border: 2px solid green;
+  border: 2px solid var(--accent-color);
 }
 
 @media (max-width: 575px) {
@@ -830,7 +911,7 @@ section,
   border-radius: 50px;
   transition: all 0.3s ease-in-out;
   margin-right: 15px;
-  border: 2px solid green;
+  border: 2px solid var(--accent-color);
 }
 
 .contact .info-item h3 {
@@ -856,7 +937,7 @@ section,
   height: 100%;
   padding: 30px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-  border: 2px solid green;
+  border: 2px solid var(--accent-color);
 }
 
 @media (max-width: 575px) {
