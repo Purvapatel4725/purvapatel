@@ -263,6 +263,9 @@ function toggleMode() {
 }
 function toggleMode() {
   const isChecked = document.querySelector('.switch input').checked;
+  const mode = isChecked ? 'blue' : 'green';
+
+  document.documentElement.setAttribute('data-mode', mode);
 
   if (isChecked) {
     document.documentElement.style.setProperty('--accent-color', 'blue');
@@ -276,4 +279,6 @@ function toggleMode() {
     document.documentElement.style.setProperty('--nav-hover-color', 'green');
   }
 }
+
+
 
