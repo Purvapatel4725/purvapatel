@@ -66,6 +66,7 @@
   transform: translateX(-50%); /* Center the container by adjusting its position back by 50% of its own width */
   text-align: center;
   padding: 30px;
+  top: auto;
 }
 
 .switch-description {
