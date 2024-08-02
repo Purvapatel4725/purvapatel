@@ -264,6 +264,7 @@ function toggleMode() {
 function toggleMode() {
   const isChecked = document.querySelector('.switch input').checked;
   const mode = isChecked ? 'blue' : 'green';
+  const heroImage = document.querySelector('#home img');
 
   document.documentElement.setAttribute('data-mode', mode);
 
@@ -272,13 +273,18 @@ function toggleMode() {
     document.documentElement.style.setProperty('--default-color', 'blue');
     document.documentElement.style.setProperty('--nav-color', 'blue');
     document.documentElement.style.setProperty('--nav-hover-color', 'blue');
+    heroImage.src = heroImage.getAttribute('data-blue-src');
   } else {
     document.documentElement.style.setProperty('--accent-color', 'green');
     document.documentElement.style.setProperty('--default-color', 'green');
     document.documentElement.style.setProperty('--nav-color', 'green');
     document.documentElement.style.setProperty('--nav-hover-color', 'green');
+    heroImage.src = heroImage.getAttribute('data-green-src');
   }
 }
+
+
+
 
 
 
