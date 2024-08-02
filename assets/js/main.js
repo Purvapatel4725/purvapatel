@@ -273,15 +273,16 @@ function toggleMode() {
     document.documentElement.style.setProperty('--default-color', 'blue');
     document.documentElement.style.setProperty('--nav-color', 'blue');
     document.documentElement.style.setProperty('--nav-hover-color', 'blue');
-    heroImage.src = heroImage.getAttribute('data-blue-src');
+    heroImage.src = heroImage.getAttribute('data-blue-src') + '?' + new Date().getTime();
   } else {
     document.documentElement.style.setProperty('--accent-color', 'green');
     document.documentElement.style.setProperty('--default-color', 'green');
     document.documentElement.style.setProperty('--nav-color', 'green');
     document.documentElement.style.setProperty('--nav-hover-color', 'green');
-    heroImage.src = heroImage.getAttribute('data-green-src');
+    heroImage.src = heroImage.getAttribute('data-green-src') + '?' + new Date().getTime();
   }
 }
+
 
 
 
