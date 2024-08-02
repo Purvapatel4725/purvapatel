@@ -53,7 +53,7 @@
   --default-color: #0000ff; /* Blue color for text */
   --accent-color: #0000ff; /* Blue color for buttons, links, etc. */
   --nav-color: #0000ff; /* Blue color for nav links */
-  --nav-hover-color: #ffffff; /* Optional: change hover color as needed */
+  --nav-hover-color: white; /* Optional: change hover color as needed */
   --nav-dropdown-color: #a8a9b4; /* Blue color for dropdown nav links */
   --nav-dropdown-hover-color: #ffffff; /* Optional: change hover color as needed */
 }
@@ -70,7 +70,7 @@
 
 .switch-description {
   color: var(--accent-color);
-
+  margin-top: auto;
   margin-bottom: 10px; /* Added space between description and switch */
 }
 
@@ -433,7 +433,7 @@ h6 {
 .navmenu a:hover,
 .navmenu .active,
 .navmenu .active:focus {
-  color: var(--nav-hover-color);
+  color: white;
 }
 
 .navmenu a:hover .navicon,
