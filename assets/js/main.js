@@ -251,37 +251,76 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+  const imagesToPreload = [
+    'assets/img/main-bg.png',
+    'assets/img/main-bg-2.jpg',
+    'assets/img/main-bg.png' // Ensure different URLs if images differ
+  ];
+
+  imagesToPreload.forEach(function(src) {
+    const img = new Image();
+    img.src = src;
+  });
+});
+
+
 function toggleMode() {
-  const body = document.body;
-  if (body.classList.contains('blue-mode')) {
-    body.classList.remove('blue-mode');
-    document.querySelector('.switch').textContent = 'Switch to Blue Mode';
-  } else {
-    body.classList.add('blue-mode');
-    document.querySelector('.switch').textContent = 'Switch to Green Mode';
+  const switchInput = document.querySelector('.switch input');
+  const currentMode = switchInput.classList.contains('mode-blue') ? 'blue' :
+                      switchInput.classList.contains('mode-red') ? 'red' : 'green';
+
+  switch (currentMode) {
+    case 'green':
+      switchInput.classList.remove('mode-green');
+      switchInput.classList.add('mode-blue');
+      document.documentElement.setAttribute('data-mode', 'blue');
+      document.documentElement.style.setProperty('--accent-color', 'blue');
+      document.documentElement.style.setProperty('--default-color', 'blue');
+      document.documentElement.style.setProperty('--nav-color', 'blue');
+      document.documentElement.style.setProperty('--nav-hover-color', 'blue');
+      break;
+    case 'blue':
+      switchInput.classList.remove('mode-blue');
+      switchInput.classList.add('mode-red');
+      document.documentElement.setAttribute('data-mode', 'red');
+      document.documentElement.style.setProperty('--accent-color', 'red');
+      document.documentElement.style.setProperty('--default-color', 'red');
+      document.documentElement.style.setProperty('--nav-color', 'red');
+      document.documentElement.style.setProperty('--nav-hover-color', 'red');
+      break;
+    case 'red':
+      switchInput.classList.remove('mode-red');
+      switchInput.classList.add('mode-green');
+      document.documentElement.setAttribute('data-mode', 'green');
+      document.documentElement.style.setProperty('--accent-color', 'green');
+      document.documentElement.style.setProperty('--default-color', 'green');
+      document.documentElement.style.setProperty('--nav-color', 'green');
+      document.documentElement.style.setProperty('--nav-hover-color', 'green');
+      break;
   }
+  updateHeroImage();
 }
-function toggleMode() {
-  const isChecked = document.querySelector('.switch input').checked;
-  const mode = isChecked ? 'blue' : 'green';
+
+function updateHeroImage() {
+  const mode = document.documentElement.getAttribute('data-mode');
   const heroImage = document.querySelector('#home img');
-
-  document.documentElement.setAttribute('data-mode', mode);
-
-  if (isChecked) {
-    document.documentElement.style.setProperty('--accent-color', 'blue');
-    document.documentElement.style.setProperty('--default-color', 'blue');
-    document.documentElement.style.setProperty('--nav-color', 'blue');
-    document.documentElement.style.setProperty('--nav-hover-color', 'blue');
-    heroImage.src = heroImage.getAttribute('data-blue-src') + '?' + new Date().getTime();
-  } else {
-    document.documentElement.style.setProperty('--accent-color', 'green');
-    document.documentElement.style.setProperty('--default-color', 'green');
-    document.documentElement.style.setProperty('--nav-color', 'green');
-    document.documentElement.style.setProperty('--nav-hover-color', 'green');
-    heroImage.src = heroImage.getAttribute('data-green-src') + '?' + new Date().getTime();
+  switch (mode) {
+    case 'blue':
+      heroImage.src = heroImage.getAttribute('data-blue-src') + '?' + new Date().getTime();
+      break;
+    case 'red':
+      heroImage.src = heroImage.getAttribute('data-red-src') + '?' + new Date().getTime();
+      break;
+    case 'green':
+    default:
+      heroImage.src = heroImage.getAttribute('data-green-src') + '?' + new Date().getTime();
+      break;
   }
 }
+
+
+
 
 
 

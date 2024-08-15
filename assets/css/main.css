@@ -58,31 +58,38 @@
   --nav-dropdown-hover-color: #ffffff; /* Optional: change hover color as needed */
 }
 
-/* Add styles for the switch button */
+.red-mode {
+  --default-color: #ff0000; /* Red color for text */
+  --accent-color: #ff0000; /* Red color for buttons, links, etc. */
+  --nav-color: #ff0000; /* Red color for nav links */
+  --nav-hover-color: white;
+}
+
 .switch-container {
   position: absolute;
-  bottom: 10px; /* Distance from the bottom of the header */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Center the container by adjusting its position back by 50% of its own width */
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
-  padding: 30px;
+  padding: 10px;
 }
 
 .switch-description {
   color: var(--accent-color);
-  margin-top: 10px;
-  margin-bottom: 10px; /* Added space between description and switch */
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 14px;
 }
 
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px; /* Width of the switch */
-  height: 34px; /* Height of the switch */
+  width: 95px; /* Adjusted width for three positions */
+  height: 34px;
 }
 
 .switch input {
-  opacity: 0; /* Hide the default checkbox */
+  opacity: 0;
   width: 0;
   height: 0;
 }
@@ -94,9 +101,10 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--accent-color); /* Default color (green) */
-  transition: .4s;
-  border-radius: 34px; /* Rounded corners */
+  background-color: var(--accent-color);
+  transition: background-color 0.4s ease; /* Smooth transition for background color */
+  border-radius: 34px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .slider:before {
@@ -108,15 +116,31 @@
   left: 4px;
   bottom: 4px;
   background-color: white;
-  transition: .4s;
+  transition: transform 0.4s ease; /* Smooth transition for transform */
 }
 
-input:checked + .slider {
-  background-color: blue; /* Color when switched on (blue mode) */
+input.mode-green + .slider {
+  background-color: green;
 }
 
-input:checked + .slider:before {
-  transform: translateX(26px); /* Move the slider to the right */
+input.mode-blue + .slider {
+  background-color: blue;
+}
+
+input.mode-red + .slider {
+  background-color: red;
+}
+
+input.mode-green + .slider:before {
+  transform: translateX(0); /* Default position for green mode */
+}
+
+input.mode-blue + .slider:before {
+  transform: translateX(30px); /* Move slider handle to center for blue mode */
+}
+
+input.mode-red + .slider:before {
+  transform: translateX(60px); /* Move slider handle to right for red mode */
 }
 
 .slider:active:before {

@@ -27,6 +27,11 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <!-- Render images beforehead -->
+  <link rel="preload" href="assets/img/main-bg.png" as="image">
+  <link rel="preload" href="assets/img/main-bg-2.jpg" as="image">
+  <link rel="preload" href="assets/img/main-bg-3.png" as="image">
+
 </head>
 
 <body class="index-page">
@@ -66,7 +71,7 @@
     </div>
     
     <div class="switch-container">
-      <p class="switch-description">Switch Theme</p>
+      <p class="switch-description">Switch Themes</p>
       <label class="switch">
         <input type="checkbox" onchange="toggleMode()">
         <span class="slider"></span>
@@ -80,7 +85,8 @@
     <!-- Hero Section -->
     <section id="home" class="hero section dark-background">
 
-      <img src="assets/img/main-bg.png" alt="Hacker" data-aos="fade-in" class="" data-green-src="assets/img/main-bg.png" data-blue-src="assets/img/main-bg-2.jpg">
+      <img src="assets/img/main-bg.png" alt="Hacker" data-aos="fade-in" class="" data-green-src="assets/img/main-bg.png" data-blue-src="assets/img/main-bg-2.jpg" data-red-src="assets/img/main-bg-3.jpg">
+
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <h2>Purva Patel</h2>
