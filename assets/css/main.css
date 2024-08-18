@@ -523,6 +523,7 @@ h6 {
   padding: 40px 0;
   position: relative;
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  font-family: var(--default-font);
 }
 
 .footer .copyright p {
