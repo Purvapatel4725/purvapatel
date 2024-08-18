@@ -265,6 +265,10 @@ h6 {
 
 /*Hover image and logo*/
 
+#header .sitename {
+  font-family: var(--heading-font);
+}
+
 .header .profile-img {
   position: relative;
 }
