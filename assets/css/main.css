@@ -46,9 +46,9 @@
 }
 
 /*--------------------------------------------------------------
-# Blue mode
+# Toogle color mode
 --------------------------------------------------------------*/
-/* Blue mode overrides */
+/* Kali Linux mode */
 .blue-mode {
   --default-color: #0000ff; /* Blue color for text */
   --accent-color: #0000ff; /* Blue color for buttons, links, etc. */
@@ -58,6 +58,7 @@
   --nav-dropdown-hover-color: #ffffff; /* Optional: change hover color as needed */
 }
 
+/* BlackArch mode */
 .red-mode {
   --default-color: #ff0000; /* Red color for text */
   --accent-color: #ff0000; /* Red color for buttons, links, etc. */
@@ -102,9 +103,9 @@
   right: 0;
   bottom: 0;
   background-color: var(--accent-color);
-  transition: background-color 0.4s ease; /* Smooth transition for background color */
+  transition: background-color 0.4s ease, box-shadow 0.2s ease; /* Smooth transition */ /* Smooth transition for background color */
   border-radius: 34px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
 }
 
 .slider:before {
@@ -116,7 +117,7 @@
   left: 4px;
   bottom: 4px;
   background-color: white;
-  transition: transform 0.4s ease; /* Smooth transition for transform */
+  transition: transform 0.4s ease, width 0.2s ease, box-shadow 0.2s ease;  /* Smooth transition for transform */
 }
 
 input.mode-green + .slider {
@@ -145,8 +146,8 @@ input.mode-red + .slider:before {
 
 .slider:active:before {
   width: 28px;
+  transform: scale(1.1);
 }
-
 
 /*Ends*/
 
