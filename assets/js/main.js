@@ -8,8 +8,8 @@
 
   function headerToggle() {
     document.querySelector('#header').classList.toggle('header-show');
-    headerToggleBtn.classList.toggle('bi-list');
-    headerToggleBtn.classList.toggle('bi-x');
+    headerToggleBtn.classList.toggle('fa-bars');
+    headerToggleBtn.classList.toggle('fa-xmark');
   }
   headerToggleBtn.addEventListener('click', headerToggle);
 
