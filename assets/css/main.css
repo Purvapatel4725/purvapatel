@@ -189,30 +189,30 @@ h6 {
 ------------------------------*/
 .php-email-form .error-message {
   display: none;
-  background: white;
-  color: white;
+  background: black;
+  color: black;
   text-align: left;
-  padding: 15px;
-  margin-bottom: 24px;
+  padding: 0px;
+  margin-bottom: 0px;
   font-weight: 600;
 }
 
 .php-email-form .sent-message {
   display: none;
-  color: #ffffff;
-  background: #059652;
+  color: white;
+  background: black;
   text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
+  padding: 0px;
+  margin-bottom: 10px;
   font-weight: 600;
 }
 
 .php-email-form .loading {
   display: none;
-  background: var(--surface-color);
+  background: black;
   text-align: center;
   padding: 15px;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .php-email-form .loading:before {
@@ -580,28 +580,43 @@ h6 {
   bottom: -15px;
   z-index: 99999;
   background-color: var(--accent-color);
-  width: 44px;
-  height: 44px;
-  border-radius: 50px;
-  transition: all 0.4s;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease-in-out;
 }
 
 .scroll-top i {
-  font-size: 24px;
+  font-size: 28px;
   color: var(--contrast-color);
-  line-height: 0;
+  transition: transform 0.3s ease;
 }
 
 .scroll-top:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background-color: color-mix(in srgb, var(--accent-color), transparent 30%);
   color: var(--contrast-color);
+}
+
+.scroll-top:hover i {
+  transform: scale(1.2);
 }
 
 .scroll-top.active {
   visibility: visible;
   opacity: 1;
-  bottom: 15px;
+  bottom: 20px;
+  transform: translateY(-10px);
 }
+
+.scroll-top.active:hover {
+  transform: translateY(-15px);
+}
+
+.scroll-top.active:active {
+  transform: translateY(-5px);
+}
+
 
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
